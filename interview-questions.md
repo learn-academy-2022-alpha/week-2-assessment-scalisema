@@ -8,9 +8,9 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
 1. What is the difference between a parameter and an argument?
 
-  Your answer:
+  Your answer: Parameters are the placeholders for the values that will go into a fuction while the arguments are the actual values that are being plugged into the fuctions.
 
-  Researched answer:
+  Researched answer: Parameters are defined as part of the fuction definition. Arguments are defined outside of the fuction but are the actual values that are passed into the fuction to create an output.
 
 
 
