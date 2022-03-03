@@ -37,9 +37,22 @@ const num2 = 0
 const num3 = -7
 // Expected output: "-7 is not divisible by three"
 
+describe('divis', () => {
+    it('takes a number as an argument and decides if the number is evenly divisble by three or not', () => {
+        const num1 = 15
+        const num2 = 0
+        const num3 = -7
+        expect(divis(num1)).toEqual(["15 is divisible by three"])
+        expect(divis(num2)).toEqual(["0 is divisible by three"])
+        expect(divis(num3)).toEqual(["-7 is not divisible by three"])
+    })
+})
+
 // We're done this before, know that we're going to use % to check the divsability of the values
 //Need to create a fuction that will return one text interperlation if evenly disible by 3 and a different one if the number isnt (everything else)
+//For this fuction I should be able to get by with using simple conditional statements
 
+// b) Create the function that makes the test pass.
 const divis = (num78) => {
     if (num1 % 3 === 0) {
         return `${num78} is divisible by three`
@@ -47,14 +60,6 @@ const divis = (num78) => {
         return `${num78} is not divisible by three`
     }
 }
-console.log(divis(num1))
-console.log(divis(num2))
-console.log(divis(num3))
-
-
-// b) Create the function that makes the test pass.
-
-
 
 // --------------------2) Create a function that takes in an array of words and returns an array with all the words capitalized.
 
@@ -65,29 +70,26 @@ const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
 const randomNouns2 = ["temperature", "database", "chopsticks", "mango", "deduction"]
 // Expected output: ["Temperature", "Database", "Chopsticks", "Mango", "Deduction"]
 
-// I want to create a fuction that will take each array item at the 0 index and replace that value with a capital letter
-// the array items are all string value types 
-
-const capitalize = (randomNouns3 = [], ind = 0) => {
-    const helper = (str = '') => {
-        return str[0].toUpperCase() + str.slice(1).toLowerCase()
-    }
-    if (ind < randomNouns3.length) {
-        randomNouns3[ind] = helper(randomNouns3[ind])
-        return capitalize(randomNouns3, ind + 1)
-    }
-    return
-}
-
-console.log(helper(randomNouns1))
-
-
-
+describe('capitalize', () => {
+    it('take in an array of words and returns an array with all the words capitalized', () => {
+        const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
+        const randomNouns2 = ["temperature", "database", "chopsticks", "mango", "deduction"]
+        expect(capitalize(randomNouns1)).toEqual(["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"])
+        expect(capitalize(randomNouns2)).toEqual(["Temperature", "Database", "Chopsticks", "Mango", "Deduction"])
+    })
+})
 
 // b) Create the function that makes the test pass.
 
-//it("Create a function that takes in an array of words and returns an array with all the words capitalized.", () =>)
-//expect(randomNouns3(randomNouns1)).toEqual(["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"])
+
+// PSEUDO CODE:
+// create a function named "capitalize" which will take in an array of strings named array
+// using .map the fuction will loop over the array
+// using the .charAt will identify the  first letter in the string and the fuction will use .toUpperCase to change the first letter to uppercase
+// .slice will allow the fuction to return the rest of the letters in each array value
+
+const capitalize = array => array.map(value => value.charAt(0).toUpperCase() + value.slice(1))
+
 
 // --------------------3) Create a function that takes in a string and logs the index of the first vowel.
 
@@ -100,30 +102,30 @@ const vowelTester2 = "academy"
 const vowelTester3 = "challenges"
 // Expected output: 2
 
-
-// I need to convert each string into an array, itentify the index locations of all the vowels and return the location with the lowest value
-//I need to only return the lowest index value thats greater than or equal to 0 because vowwla that are missing will bring back a -1
-
-const string1 = vowelTester3.split("")
-console.log(string1)
-
-
-var FindA = (string1.indexOf("a"))
-var FindE = (string1.indexOf("e"))
-var FindI = (string1.indexOf("i"))
-var FindO = (string1.indexOf("o"))
-var FindU = (string1.indexOf("u"))
-
-var vowelArray = [FindA, FindE, FindI, FindO, FindU]
-
-var lowest = vowelArray[0]
-for (let i = 1; i < vowelArray.length; i++) {
-    if (vowelArray[i] > -1 && vowelArray[i] < lowest) {
-        lowest = vowelArray[i]
-    }
-}
-console.log(lowest(vowelTester1))
-console.log(lowest(vowelTester2))
-console.log(lowest(vowelTester3))
+describe("vowelFinder", () => {
+    const vowelTester1 = "learn"
+    const vowelTester2 = "academy"
+    const vowelTester3 = "challenges"
+    it("logs the index of the first vowel.", () => {
+        epect(vowelFinder(vowelTester1)).toEqual(1)
+        expect(vowelFinder(vowelTester2)).toEqual(0)
+        expect(vowelFinder(vowelTester3)).toEqual(2)
+    })
+})
 
 // b) Create the function that makes the test pass.
+
+// create a fuction to return the index location of the first A E I O or U,
+// all letters are lowercase
+// use a for loop to interate through the variiablr "vowelString" which we create for the loop <vowelString.length
+// create a return for the index location if the value strickly equall too (===) a or e or i or i or u
+
+const vowelFinder = (string) => {
+    let vowelIndex = string.split("")
+    for (let i = 0; i < vowelIndex.length; i++) {
+        if (vowelIndex[i] === "a" || vowelIndex[i] === "e" || vowelIndex[i] === "i" || vowelIndex[i] === "o" || vowelIndex[i] === "u") {
+            return i
+        }
+    }
+}
+
