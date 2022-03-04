@@ -65,3 +65,4 @@ Research and define the following terms to the best of your ability.
 4. React lifecycle methods: Each component in React has a lifecycle which you can monitor and manipulate during its three main phases. The three phases are: Mounting, Updating, and Unmounting.
 
 5. DOM: DOM stands for ‘Document Object Model’. In simple terms, it is a structured representation of the HTML elements that are present in a webpage or web-app.
+

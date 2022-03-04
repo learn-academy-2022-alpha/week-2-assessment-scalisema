@@ -70,3 +70,4 @@ var learnStudent = new Learn("George")
 
 // a) Your answer: Learn { student: name, cohort: 'Alpha', year: 2022 }
 // b) Verify and explain: I wasnt sure if this would pull George for the name of the student (which it does) rather than my guess which was "name" I'm guessing that the use of "constructor" allows the spesified name in the variable learnStudent to be passed as a peramiter into the class Learn 
+
