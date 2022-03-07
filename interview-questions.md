@@ -1,6 +1,5 @@
 # ASSESSMENT 2: Interview Practice Questions
 
-Answer the following questions.
 
 First, without external resources. Challenge yourself to answer from memory as if you were in a job interview.
 
@@ -34,8 +33,7 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
   Your answer: Methods are functions that "live" inside of objects, while functions can be found outside of objects.
 
-  Researched answer: A method is a piece of code that is called by a name that is associated with an object. In most respects it is identical to a function except for two key differences:  
-  Fistly a method is implicitly passed the object on which it was called. Secondly A method is able to operate on data that is contained within the class.
+  Researched answer: A method is a piece of code that is called by a name that is associated with an object. In most respects it is identical to a function except for two key differences: First a method is implicitly passed the object on which it was called. Secondly A method is able to operate on data that is contained within the class.
 
 5. What is object destructuring?
 
